@@ -6,7 +6,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fba7a86-0391-4759-abaf-d6907a0b0504" name="Default" comment="" />
+    <list default="true" id="8fba7a86-0391-4759-abaf-d6907a0b0504" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoseHulMAP/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RoseHulMAP/.idea/misc.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +22,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="70" />
-    <option name="y" value="8" />
+    <option name="y" value="5" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -28,10 +31,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">

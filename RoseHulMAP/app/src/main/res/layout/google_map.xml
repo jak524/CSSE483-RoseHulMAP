@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <ImageView android:layout_width="379dp"
+               android:layout_height="428dp"
+               android:src="@drawable/rose_google_maps" tools:layout_editor_absoluteY="0dp"
+               tools:layout_editor_absoluteX="0dp"/>
+    <TextView
+            android:text="1. Turn right after room 233 \n2. Travel straight until you run into the admission offices \n3. Turn left then the exit will be the first door on your right"
+            android:layout_width="289dp"
+            android:layout_height="161dp" tools:layout_editor_absoluteY="359dp"
+            tools:layout_editor_absoluteX="53dp" android:id="@+id/textView4" android:textSize="20sp"/>
+    <TextView
+            android:text="Est. Time Arrival: 9:50 AM"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" tools:layout_editor_absoluteY="7dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/textView5"/>
+    <TextView
+            android:text="Avg Speed: 2 m/s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="27dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/textView6"/>
+    <!--<com.google.android.gms.maps.MapView-->
+            <!--android:layout_width="310dp"-->
+            <!--android:src = "@drawable/common_full_open_on_phone"-->
+            <!--android:layout_height="282dp" tools:layout_editor_absoluteY="27dp"-->
+            <!--tools:layout_editor_absoluteX="38dp" android:id="@+id/mapView"/>-->
+</android.support.constraint.ConstraintLayout>
