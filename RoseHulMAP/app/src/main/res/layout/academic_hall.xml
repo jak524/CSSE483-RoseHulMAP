@@ -14,7 +14,7 @@
             android:layout_height="369dp"
             android:src="@drawable/olin_aerial"
             android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
-            android:layout_marginTop="39dp"/>
+            android:layout_marginTop="44dp"/>
     <TextView
             android:text="Olin"
             android:layout_width="wrap_content"
@@ -25,8 +25,8 @@
             android:text="Fun Fact: Olin was dontated by a generous alumni."
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_alignParentStart="true"
-            android:layout_marginStart="27dp" android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true" android:id="@+id/textView8" android:layout_marginBottom="53dp"
-            android:layout_marginLeft="27dp" android:textSize="20sp"/>
+            android:layout_marginStart="5dp" android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true" android:id="@+id/textView8" android:layout_marginBottom="31dp"
+            android:layout_marginLeft="5dp" android:textSize="20sp"/>
 
 </RelativeLayout>
