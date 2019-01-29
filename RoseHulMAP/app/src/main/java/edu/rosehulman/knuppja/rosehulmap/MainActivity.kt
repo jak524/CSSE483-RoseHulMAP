@@ -96,6 +96,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.favorites -> {
 
+
             }
 
             R.id.contact -> {
