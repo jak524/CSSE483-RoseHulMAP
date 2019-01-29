@@ -10,6 +10,7 @@ android {
         applicationId "edu.rosehulman.knuppja.rosehulmap"
         minSdkVersion 15
         targetSdkVersion 28
+        multiDexEnabled = true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -35,5 +36,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'com.google.android.gms:play-services-location:11.8.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }
