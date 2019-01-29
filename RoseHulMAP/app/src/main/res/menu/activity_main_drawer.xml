@@ -3,19 +3,19 @@
 
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/nav_camera"
+                android:id="@+id/academic_buildings"
                 android:icon="@drawable/ic_menu_gallery"
                 android:title="Academic Buildings"/>
         <item
-                android:id="@+id/nav_gallery"
+                android:id="@+id/professors"
                 android:icon="@drawable/ic_menu_gallery"
                 android:title="Professors"/>
         <item
-                android:id="@+id/nav_slideshow"
+                android:id="@+id/facilities"
                 android:icon="@drawable/ic_menu_manage"
                 android:title="Facilities"/>
         <item
-                android:id="@+id/nav_manage"
+                android:id="@+id/full_campus_map"
                 android:icon="@drawable/ic_menu_gallery"
                 android:title="Full Campus Map"/>
         <item

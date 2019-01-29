@@ -56,16 +56,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
-                // Handle the camera action
+            R.id.academic_buildings -> {
+                val fm = supportFragmentManager
+                val ft = supportFragmentManager.beginTransaction()
+                val fragment = BuildingListFragment(fm)
+                ft.add(R.id.fragment_container, fragment)
+                ft.commit()
             }
-            R.id.nav_gallery -> {
+            R.id.professors -> {
 
             }
-            R.id.nav_slideshow -> {
+            R.id.facilities -> {
 
             }
-            R.id.nav_manage -> {
+            R.id.full_campus_map -> {
+
+            }
+
+            R.id.favorites -> {
+
+            }
+
+            R.id.contact -> {
 
             }
 

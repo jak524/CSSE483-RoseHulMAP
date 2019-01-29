@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "164421233905",
+    "firebase_url": "https://rosehulmap.firebaseio.com",
+    "project_id": "rosehulmap",
+    "storage_bucket": "rosehulmap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164421233905:android:2cb670e4c75910c4",
+        "android_client_info": {
+          "package_name": "edu.rosehulman.knuppja.rosehulmap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164421233905-af0b9hguqieh83vanijpmtc1c8v8hk7v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.rosehulman.knuppja.rosehulmap",
+            "certificate_hash": "45ed8db8fe937ceafde2d7654975051e04f4a8eb"
+          }
+        },
+        {
+          "client_id": "164421233905-lahf2iembnb7lqvqjegia5pinhoct1jj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD92aOMnL3ffS3rqvWOCUJkZyUQ8b5Rbro"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164421233905-lahf2iembnb7lqvqjegia5pinhoct1jj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
