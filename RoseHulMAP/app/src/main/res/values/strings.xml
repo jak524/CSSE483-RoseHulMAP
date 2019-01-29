@@ -7,4 +7,6 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="buildings_list_tap_text">Tap a building name above to view the map!</string>
+    <string name="imageurl_full_campus_map">https://www.rose-hulman.edu/visit/maps-and-directions/RH-Campus-Map-RGB.jpg</string>
+    <string name="text_full_campus_map">Full Campus Map</string>
 </resources>
