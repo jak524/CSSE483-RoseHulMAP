@@ -25,8 +25,8 @@ class FullCampusMapFragment() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.full_campus_map, container, false)
-        Picasso.get().load(getString(R.string.imageurl_full_campus_map)).into(view.full_campus_map_imageView)
-        //Picasso.get().load(getString(R.string.imageurl_full_campus_map)).into(view.full_campus_map_photoView)
+        //Picasso.get().load(getString(R.string.imageurl_full_campus_map)).into(view.full_campus_map_imageView)
+        Picasso.get().load(getString(R.string.imageurl_full_campus_map)).into(view.full_campus_map_photoView)
         view.full_campus_map_textView.text = getString(R.string.text_full_campus_map)
 
 
