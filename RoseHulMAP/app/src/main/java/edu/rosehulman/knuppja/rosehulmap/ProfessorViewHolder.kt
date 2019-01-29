@@ -15,7 +15,7 @@ class ProfessorViewHolder(itemView: View, var adapter: ProfessorListAdapter) : R
 
         itemView.setOnClickListener {
             val ft = adapter.fm.beginTransaction()
-            var fragment = BuildingFragment(adapter, adapterPosition)
+            var fragment = ProfessorFragment(adapter, adapterPosition)
             ft.replace(R.id.fragment_container, fragment)
             ft.addToBackStack("")
             ft.commit()

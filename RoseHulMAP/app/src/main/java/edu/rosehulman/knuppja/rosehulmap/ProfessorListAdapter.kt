@@ -1,9 +1,7 @@
 package edu.rosehulman.knuppja.rosehulmap
 
 import android.content.Context
-import android.support.constraint.R.id.parent
 import android.support.v4.app.FragmentManager
-import android.support.v7.app.AlertDialog
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.ViewGroup
@@ -11,10 +9,11 @@ import android.view.LayoutInflater
 import com.google.firebase.firestore.*
 
 
-class ProfessorListAdapter(var context: Context?, var listener: ProfessorListFragment.OnPicSelectedListener?, var fm: FragmentManager) : RecyclerView.Adapter<BuildingViewHolder>() {
+class ProfessorListAdapter(var context: Context?, var listener: ProfessorListFragment.OnPicSelectedListener?, var fm: FragmentManager) : RecyclerView.Adapter<ProfessorViewHolder>() {
 
-    var buildings = ArrayList<Building>()
-    private val picsRef = FirebaseFirestore.getInstance().collection("professors")
+
+    var professors = ArrayList<Professor>()
+    private val profRef = FirebaseFirestore.getInstance().collection("professors")
 
     private lateinit var listenerRegistration: ListenerRegistration
 
@@ -23,8 +22,8 @@ class ProfessorListAdapter(var context: Context?, var listener: ProfessorListFra
 
 
 
-    override fun onBindViewHolder(p0: BuildingViewHolder, p1: Int) {
-        p0.bind(buildings[p1])
+    override fun onBindViewHolder(p0: ProfessorViewHolder, p1: Int) {
+        p0.bind(professors[p1])
     }
 
 
@@ -36,7 +35,7 @@ class ProfessorListAdapter(var context: Context?, var listener: ProfessorListFra
 
     override fun getItemCount(): Int {
 
-        return buildings.size
+        return professors.size
 
     }
 
@@ -52,7 +51,7 @@ class ProfessorListAdapter(var context: Context?, var listener: ProfessorListFra
 
 
     fun addSnapshotListener() {
-        listenerRegistration = picsRef
+        listenerRegistration = profRef
             .addSnapshotListener { querySnapshot, e ->
                 if (e != null) {
                     Log.w("tag", "listen error", e)
@@ -66,11 +65,11 @@ class ProfessorListAdapter(var context: Context?, var listener: ProfessorListFra
         // Snapshots has documents and documentChanges which are flagged by type,
         // so we can handle C,U,D differently.
         for (documentChange in querySnapshot.documentChanges) {
-            val movieQuote = Building.fromSnapshot(documentChange.document)
+            val prof = Professor.fromSnapshot(documentChange.document)
             when (documentChange.type) {
                 DocumentChange.Type.ADDED -> {
 
-                    buildings.add(0, movieQuote)
+                    professors.add(0, prof)
                     notifyItemInserted(0)
                 }
                 else -> {
@@ -84,12 +83,12 @@ class ProfessorListAdapter(var context: Context?, var listener: ProfessorListFra
 
 
     fun selectPicAt(position: Int) {
-        listener?.onPicSelected(buildings[position])
+        listener?.onPicSelected(professors[position])
     }
 
 
 
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): BuildingViewHolder {
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ProfessorViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.building_row_view, p0, false)
         return ProfessorViewHolder(view, this)
     }

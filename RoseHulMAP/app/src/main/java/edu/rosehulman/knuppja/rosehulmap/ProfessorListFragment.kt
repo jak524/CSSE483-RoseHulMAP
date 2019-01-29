@@ -2,7 +2,6 @@
 
 package edu.rosehulman.knuppja.rosehulmap
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
@@ -56,7 +55,7 @@ class ProfessorListFragment(var fm: FragmentManager) : Fragment() {
 
 
     interface OnPicSelectedListener {
-        fun onPicSelected(building: Building)
+        fun onPicSelected(building: Professor)
     }
 
 }

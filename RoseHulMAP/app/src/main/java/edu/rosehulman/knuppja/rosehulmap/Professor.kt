@@ -19,7 +19,7 @@ data class Professor(var name: String="", var bio: String="", var officeNumber: 
         const val LAST_TOUCHED_KEY = "lastTouched"
 
         fun fromSnapshot(snapshot: DocumentSnapshot): Professor {
-            val professor = snapshot.toObject(Building::class.java)!!
+            val professor = snapshot.toObject(Professor::class.java)!!
 
             professor.id = snapshot.id
 
