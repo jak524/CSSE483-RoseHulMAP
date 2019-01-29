@@ -13,7 +13,7 @@ private const val ARG_PIC = "doc"
 
 class FullCampusMapFragment() : Fragment() {
 
-    private var pic: Building? = null
+
 
 
 
