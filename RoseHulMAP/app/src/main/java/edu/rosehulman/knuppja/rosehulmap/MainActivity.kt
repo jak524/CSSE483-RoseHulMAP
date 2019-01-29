@@ -60,10 +60,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val fm = supportFragmentManager
                 val ft = supportFragmentManager.beginTransaction()
                 val fragment = BuildingListFragment(fm)
-                ft.add(R.id.fragment_container, fragment)
+                ft.replace(R.id.fragment_container, fragment)
+                ft.addToBackStack("")
                 ft.commit()
             }
             R.id.professors -> {
+
+                val fm = supportFragmentManager
+                val ft = supportFragmentManager.beginTransaction()
+                val fragment = ProfessorListFragment(fm)
+                ft.replace(R.id.fragment_container, fragment)
+                ft.addToBackStack("")
+                ft.commit()
 
             }
             R.id.facilities -> {
