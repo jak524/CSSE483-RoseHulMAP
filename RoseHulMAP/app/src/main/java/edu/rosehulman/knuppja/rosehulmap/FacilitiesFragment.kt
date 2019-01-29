@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.building_fragment.view.*
 
 private const val ARG_PIC = "doc"
 
-class BuildingFragment(var adapter: BuildingListAdapter, var position: Int) : Fragment() {
+class FacilitiesFragment() : Fragment() {
 
     private var pic: Building? = null
 
@@ -22,12 +22,11 @@ class BuildingFragment(var adapter: BuildingListAdapter, var position: Int) : Fr
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.building_fragment, container, false)
+        val view = inflater.inflate(R.layout.facilities_main, container, false)
 
 
-        view.building_name_view.text = adapter.buildings.get(position).name
 
-        view.building_fact_view.text = adapter.buildings.get(position).funFact
+
 
 
 

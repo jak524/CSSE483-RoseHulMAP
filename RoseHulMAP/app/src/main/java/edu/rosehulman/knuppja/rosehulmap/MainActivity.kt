@@ -76,8 +76,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.facilities -> {
 
+                val fm = supportFragmentManager
+                val ft = supportFragmentManager.beginTransaction()
+                val fragment = FacilitiesFragment()
+                ft.replace(R.id.fragment_container, fragment)
+                ft.addToBackStack("")
+                ft.commit()
+
             }
             R.id.full_campus_map -> {
+                val fm = supportFragmentManager
+                val ft = supportFragmentManager.beginTransaction()
+                val fragment = FullCampusMapFragment()
+                ft.replace(R.id.fragment_container, fragment)
+                ft.addToBackStack("")
+                ft.commit()
 
             }
 
