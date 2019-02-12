@@ -1,5 +1,7 @@
 package edu.rosehulman.knuppja.rosehulmap
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -10,6 +12,9 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import android.content.ActivityNotFoundException
+
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
 
@@ -100,6 +105,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.contact -> {
+                //https://medium.com/@cketti/android-sending-email-using-intents-3da63662c58f
+                val mailto = "mailto:gishbd@rose-hulman.edu" +
+                        "&subject=" + Uri.encode("RoseHulmap Contact")
+                val emailIntent = Intent(Intent.ACTION_SENDTO)
+                emailIntent.data = Uri.parse(mailto)
+                try {
+                    startActivity(emailIntent)
+                } catch (e: ActivityNotFoundException) {
+                    //TODO: Handle case where no email app is available
+                }
 
             }
 
