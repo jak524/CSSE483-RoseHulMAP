@@ -8,7 +8,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "edu.rosehulman.knuppja.rosehulmap"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         multiDexEnabled = true
         versionCode 1
@@ -38,5 +38,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:11.8.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.github.chrisbanes:PhotoView:2.1.4'
+    implementation 'com.firebaseui:firebase-ui-auth:4.1.0' // new
+    implementation 'com.google.firebase:firebase-auth:16.1.0' // new
+    implementation 'com.google.firebase:firebase-core:16.0.6' // new
 
 }
