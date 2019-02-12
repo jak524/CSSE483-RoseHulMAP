@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity(),
     NavigationView.OnNavigationItemSelectedListener,
     SplashFragment.OnLoginButtonPressedListener{
 
-    private lateinit var settingsRef: DocumentReference
     val auth = FirebaseAuth.getInstance()
     lateinit var authListener: FirebaseAuth.AuthStateListener
     private val RC_SIGN_IN = 1
@@ -166,7 +165,7 @@ class MainActivity : AppCompatActivity(),
                 Log.d(Constants.TAG, "Email: ${user.email}")
                 Log.d(Constants.TAG, "Photo: ${user.photoUrl}")
                 Log.d(Constants.TAG, "Phone: ${user.phoneNumber}")
-                //switchToPicListFragment(user.uid)
+                switchToFullCampusMapFragment(user.uid)
             } else {
                 switchToSplashFragment()
             }
@@ -176,6 +175,17 @@ class MainActivity : AppCompatActivity(),
     private fun switchToSplashFragment() {
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.fragment_container, SplashFragment())
+        ft.commit()
+    }
+
+    private fun switchToFullCampusMapFragment(uid: String) {
+        val fm = supportFragmentManager
+        val ft = supportFragmentManager.beginTransaction()
+        val newFrag = FullCampusMapFragment()
+//        newFrag.fragMan = fm
+//        newFrag.uid = uid
+//        newFrag.showAll = showAll
+        ft.replace(R.id.fragment_container, newFrag)
         ft.commit()
     }
 
