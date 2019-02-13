@@ -38,6 +38,9 @@ class RoomViewHolder(itemView: View, var adapter: RoomListAdapter) : RecyclerVie
         mMap = googleMap
         mMap.isIndoorEnabled = true
 
+
+        val coordinates = adapter.rooms[adapterPosition].coords
+
         // Add a marker in Sydney and move the camera
         val olin = LatLng(39.4828715, -87.3249709)
         mMap.addMarker(MarkerOptions().position(olin).title("Olin"))
