@@ -1,40 +1,25 @@
 package edu.rosehulman.knuppja.rosehulmap
 
-import android.content.pm.PackageManager
-import android.location.Location
+import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolylineOptions
 
-class MapsFragment : AppCompatActivity(),
-    OnMapReadyCallback,
-    GoogleMap.OnMarkerClickListener {
 
-    private lateinit var lastLocation: Location
-    private lateinit var map: GoogleMap
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
+class MapFragment() : SupportMapFragment(), OnMapReadyCallback {
 
-    override fun onMarkerClick(p0: Marker?) = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maps)
 
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-    }
+    private lateinit var mMap: GoogleMap
+
+
+
 
     /**
      * Manipulates the map once available.
@@ -46,44 +31,26 @@ class MapsFragment : AppCompatActivity(),
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(googleMap: GoogleMap) {
-        map = googleMap
+        mMap = googleMap
 
-        map.uiSettings.isZoomControlsEnabled = true
-        map.setOnMarkerClickListener(this)
+        mMap.isIndoorEnabled = true
 
-        setUpMap()
+        val line = mMap.addPolyline(
+                PolylineOptions()
+                        .add(LatLng(39.4828563, -87.3248556), LatLng(39.4825372, -87.3247302))
+                        .width(5f)
+                        .color(Color.RED)
+        )
 
-//        map = googleMap
-//        // Add a marker in Sydney and move the camera
-//        val sydney = LatLng(-34.0, 151.0)
-//        map.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-//        map.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-//        map.getUiSettings().setZoomControlsEnabled(true)
-//        map.setOnMarkerClickListener(this)
+        // Add a marker in Sydney and move the camera
+        val olin = LatLng(39.4828715, -87.3249709)
+        mMap.addMarker(MarkerOptions().position(olin).title("Olin"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(olin))
+
+
+
+
     }
 
-    private fun setUpMap() {
-        if (ActivityCompat.checkSelfPermission(this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
-            return
-        }
-        map.isMyLocationEnabled = true
 
-// 2
-        fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
-            // Got last known location. In some rare situations this can be null.
-            // 3
-            if (location != null) {
-                lastLocation = location
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
-            }
-        }
-    }
-
-    companion object {
-        private const val LOCATION_PERMISSION_REQUEST_CODE = 1
-    }
 }

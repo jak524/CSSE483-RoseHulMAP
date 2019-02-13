@@ -21,15 +21,15 @@ class BuildingViewHolder(itemView: View, var adapter: BuildingListAdapter) : Rec
             ft.commit()
         }
 
-//        itemView.setOnLongClickListener {
-//            val fragment = PicFragment(adapter, adapterPosition)
-//            val ft = adapter.fm.beginTransaction()
-//            ft.replace(R.id.fragment_container, fragment)
-//            ft.addToBackStack("")
-//            ft.commit()
-//
-//            true
-//        }
+        itemView.setOnLongClickListener {
+            val fragment = RoomListFragment(adapter.fm)
+            val ft = adapter.fm.beginTransaction()
+            ft.replace(R.id.fragment_container, fragment)
+            ft.addToBackStack("")
+            ft.commit()
+
+            true
+        }
 
 
 
