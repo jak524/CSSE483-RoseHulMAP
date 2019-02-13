@@ -21,6 +21,7 @@ class MapFragment() : SupportMapFragment(), OnMapReadyCallback {
 
 
 
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -31,8 +32,9 @@ class MapFragment() : SupportMapFragment(), OnMapReadyCallback {
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
 
+        mMap = googleMap
+        this.getMapAsync(this)
         mMap.isIndoorEnabled = true
 
         val line = mMap.addPolyline(
@@ -48,6 +50,11 @@ class MapFragment() : SupportMapFragment(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(olin))
 
 
+
+
+    }
+
+    fun update() {
 
 
     }
