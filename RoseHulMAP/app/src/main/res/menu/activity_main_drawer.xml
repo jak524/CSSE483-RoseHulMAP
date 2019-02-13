@@ -18,11 +18,7 @@
                 android:id="@+id/full_campus_map"
                 android:icon="@drawable/ic_menu_gallery"
                 android:title="Full Campus Map"/>
-        <item
-                android:id="@+id/favorites"
-                android:title="Favorites"
-                android:icon="@drawable/ic_menu_camera"
-            />
+
     </group>
 
     <item android:title="Communicate">

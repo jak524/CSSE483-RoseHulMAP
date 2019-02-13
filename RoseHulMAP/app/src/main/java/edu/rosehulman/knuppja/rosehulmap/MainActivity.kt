@@ -114,10 +114,6 @@ class MainActivity : AppCompatActivity(),
 
             }
 
-            R.id.favorites -> {
-
-
-            }
 
             R.id.contact -> {
                 //https://medium.com/@cketti/android-sending-email-using-intents-3da63662c58f

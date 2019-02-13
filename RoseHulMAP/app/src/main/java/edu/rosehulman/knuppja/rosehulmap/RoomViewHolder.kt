@@ -4,6 +4,7 @@ import android.app.PendingIntent.getActivity
 import android.graphics.Color
 import android.support.v4.app.Fragment
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.View
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -39,12 +40,16 @@ class RoomViewHolder(itemView: View, var adapter: RoomListAdapter) : RecyclerVie
         mMap.isIndoorEnabled = true
 
 
-        val coordinates = adapter.rooms[adapterPosition].coords
+        var coordinatesLat = adapter.rooms[adapterPosition].coords.latitude
+        var coordinateLong = adapter.rooms[adapterPosition].coords.longitude
+        var roomName = adapter.rooms[adapterPosition].name
 
-        // Add a marker in Sydney and move the camera
-        val olin = LatLng(39.4828715, -87.3249709)
-        mMap.addMarker(MarkerOptions().position(olin).title("Olin"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(olin))
+//        39.482689, -87.324320
+//        val coord =  LatLng(39.482689, -87.324320)
+        val coord =  LatLng(coordinatesLat,coordinateLong)
+        Log.d(Constants.TAG,"hello" + coord.toString())
+        mMap.addMarker(MarkerOptions().position(coord).title(roomName))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coord,19.0f))
     }
 
 }
